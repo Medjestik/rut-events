@@ -1,0 +1,128 @@
+.section {
+	margin: 40px 0 0 0;
+	padding: 20px 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	&__count {
+		position: absolute;
+		top: 40px;
+		left: -50px;
+		font-size: 356px;
+		font-weight: bold;
+		font-style: normal;
+		line-height: 1;
+		color: var(--default-background-color);
+		opacity: .5;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1440px;
+	z-index: 5;
+	padding-bottom: 120px;
+	position: relative;
+	display: flex;
+}
+
+.info {
+	margin: 120px 0 0 0;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.tag {
+	margin: 0;
+	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	color: var(--accent-grey-color);
+}
+
+.title {
+	margin: 12px 0 0 0;
+	font-size: 64px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 1.15;
+	color: var(--main-black-color);
+}
+
+.text {
+	margin: 12px 0 0 0;
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.15;
+	color: var(--main-black-color);
+}
+
+.link {
+	margin: 20px 0 0 0;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 1.15;
+	color: var(--main-black-color);
+	transition: all .3s ease-in-out;
+	&:hover {
+		cursor: pointer;
+		color: var(--main-blue-color);
+	}
+}
+
+.numbers {
+	margin: 80px 0 0 80px;
+	display: flex;
+	flex-direction: column;
+	&_first {
+		margin: 0;
+	}
+	&_second {
+		margin: -40px 0 0 240px;
+	}
+	&_third {
+		margin: -80px 0 0 -120px;
+	}
+}
+
+.bubble_first {
+	right: 50vw;
+	bottom: 240px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-image: url('../../../../shared/images/bubble-4.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bubble_second {
+	right: 0px;
+	top: 120px;
+	position: absolute;
+	width: 240px;
+	height: 240px;
+	background-image: url('../../../../shared/images/bubble-5.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bubble_third {
+	right: 2vw;
+	bottom: 0px;
+	position: absolute;
+	width: 360px;
+	height: 360px;
+	background-image: url('../../../../shared/images/bubble-6.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

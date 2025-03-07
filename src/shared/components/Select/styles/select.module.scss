@@ -1,0 +1,131 @@
+.select {
+  margin: 0;
+  width: 300px;
+  height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+	padding: 0 12px;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  background: var(--control-background-color);
+  transition: all .3s ease-in-out;
+	&:hover {
+		cursor: pointer;
+	}
+	&_status_open {
+		&:hover {
+		}
+	}
+	&_width_default {
+		width: 300px;
+	}
+	&_width_small {
+		width: 120px;
+	}
+}
+
+.main {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0 22px 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--main-white-color);
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.placeholder {
+	margin: 0 22px 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--main-grey-color);
+}
+
+.arrow {
+  margin: 0;
+  width: 14px;
+  height: 7px;
+  background-image: url('../../../images/select-arrow.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(0deg);
+  transition: all .3s ease-in-out;
+	&_status_open {
+		transform: rotate(180deg);
+	}
+}
+
+.options {
+  width: 100%;
+  margin: 4px 0 0 0;
+	padding: 4px 8px 4px 0;
+  background: var(--control-background-color);
+  border-radius: 8px;
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  transition: all .3s ease-in-out;
+  z-index: 100;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 12px -8px rgb(0 0 0 / 90%);
+	&_status_open {
+		display: block;
+	}
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.item {
+  margin: 0 12px;
+  padding: 11px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--slider-color);
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+
+.text {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--main-white-color);
+	&_empty {
+		color: var(--main-grey-color);
+	}
+}
+
+.item:hover .text {
+  color: var(--main-grey-color);
+}
+
+.item:hover .text_empty {
+  color: var(--main-grey-color);
+}
+

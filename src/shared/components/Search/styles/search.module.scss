@@ -1,0 +1,25 @@
+.search {
+  margin: 0px;
+  width: 240px;
+	height: 40px;
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background: var(--control-background-color);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  color: var(--main-white-color);
+  transition: all .3s ease-in-out;
+	&::placeholder {
+		color: var(--main-grey-color);
+	}
+}
+

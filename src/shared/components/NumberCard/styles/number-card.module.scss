@@ -1,0 +1,49 @@
+.card {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	box-sizing: border-box;
+	&_background_default {
+		padding: 48px;
+		width: 100%;
+		max-width: 345px;
+		background-color: var(--default-background-color);
+		border-radius: 40px;
+		color: var(--main-black-color);
+	}
+	&_background_transparent {
+		padding: 20px;
+		width: 100%;
+		max-width: 240px;
+		background-color: transparent;
+		color: var(--main-white-color);
+	}
+	&_background_color {
+		padding: 48px;
+		width: 100%;
+		max-width: 345px;
+		background-color: var(--main-blue-color);
+		border-radius: 40px;
+		color: var(--main-white-color);
+	}
+	&__count {
+		margin: 0;
+		font-size: 96px;
+		font-style: normal;
+		font-weight: normal;
+		text-align: center;
+		line-height: 1;
+		color: inherit;
+	}
+	&__caption {
+		margin: 0 auto;
+		max-width: 240px;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: normal;
+		text-align: center;
+		line-height: 1;
+		color: inherit;
+	}
+}

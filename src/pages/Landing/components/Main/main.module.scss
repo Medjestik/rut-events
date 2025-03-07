@@ -1,0 +1,137 @@
+.main {
+	margin: 0 24px;
+	padding: 20px 0;
+	width: calc(100% - 48px);
+	height: calc(100vh - 40px);
+	display: flex;
+	flex-direction: column;
+	border-bottom-right-radius: 32px;
+	border-bottom-left-radius: 32px;
+	background-color: var(--landing-background-color);
+	position: relative;
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	height: calc(100vh - 40px);
+	max-width: 1440px;
+	z-index: 5;
+}
+
+.description {
+	margin: 10vh 0 20px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 48px;
+}
+
+.title {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	&__text {
+		margin: 0;
+		font-size: 104px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 1.15;
+		text-transform: uppercase;
+		color: var(--main-white-color);
+	}
+	&_font_defectica {
+		font-family: 'Defectica', 'Cygre', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	}
+}
+
+.caption {
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.15;
+	color: var(--main-white-color);
+}
+
+.control {
+	margin: 0;
+	width: 100%;
+	display: flex;
+}
+
+.numbers {
+	margin: 0 0 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.circle {
+	position: absolute;
+	left: calc((100vw - 160px) / 2);
+	bottom: -84px;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	border: 20px solid var(--landing-background-color);
+	background-color: var(--accent-green-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	z-index: 5;
+	transition: all .3s ease-in-out;
+	&:hover {
+		cursor: pointer;
+	}
+	&__icon {
+		width: 40px;
+		height: 40px;
+		background-image: url('../../../../shared/images/icons/buttons/play-white.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+.gradient {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+}
+
+.bubble_first {
+	right: 50vw;
+	bottom: 40vh;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-image: url('../../../../shared/images/bubble-1.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bubble_second {
+	right: 40vw;
+	bottom: 50vh;
+	position: absolute;
+	width: 140px;
+	height: 140px;
+	background-image: url('../../../../shared/images/bubble-2.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bubble_third {
+	right: 12vw;
+	bottom: 20px;
+	position: absolute;
+	width: 360px;
+	height: 360px;
+	background-image: url('../../../../shared/images/bubble-3.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

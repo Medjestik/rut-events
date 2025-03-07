@@ -1,0 +1,90 @@
+.section {
+	margin: 0;
+	padding: 20px 0 0 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 24px;
+	width: calc(100% - 48px);
+	min-height: 100vh;
+	border-radius: 32px;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--landing-background-color);
+	position: relative;
+}
+
+.background {
+	margin: 0;
+	width: 100%;
+	min-height: 100vh;
+	background-image: url('../../../../shared/images/footer-background.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	opacity: .3;
+	top: 0;
+	left: 0;
+}
+
+.info {
+	margin: 120px 0 0 0;
+	width: 100%;
+	height: calc(100vh - 160px);
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+}
+
+.title {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	z-index: 5;
+	&__text {
+		margin: 0;
+		font-size: 104px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 1.15;
+		text-transform: uppercase;
+		color: var(--main-white-color);
+		text-align: center;
+	}
+	&_font_defectica {
+		font-family: 'Defectica', 'Cygre', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	}
+}
+
+.logo {
+	margin: auto 0 0 0;
+	display: flex;
+	align-items: center;
+}
+
+.logo_img {
+	margin: 0;
+	width: 100%;
+	height: 35px;
+	object-fit: contain;
+	object-position: center;
+}
+
+.copy {
+	margin: 0;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.15;
+	color: var(--main-white-color);
+	text-align: center;
+}
