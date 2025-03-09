@@ -112,3 +112,43 @@
 		color: var(--main-white-color);
 	}
 }
+
+@media all and (max-width: 1440px) {
+	.table {
+		max-width: 1280px;
+	}
+	.table__text {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 1280px) {
+	.table {
+		max-width: 1240px;
+	}
+	.table__text {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.table {
+		max-width: none;
+	}
+	.table__text {
+		font-size: 12px;
+	}
+	.table__column {
+		margin-right: 8px;
+		&_type_date {
+			width: 56px;
+		}
+		&_type_time {
+			width: 68px;
+		}
+	}
+	.table__row {
+		padding: 11px 0;
+	}
+}
+

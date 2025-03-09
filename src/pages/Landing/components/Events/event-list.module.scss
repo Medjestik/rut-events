@@ -63,3 +63,24 @@
 	}
 }
 
+@media all and (max-width: 800px) {
+	.item {
+		gap: 8px;
+	}
+
+	.number {
+		font-size: 16px;
+	}
+
+	.title {
+		font-size: 14px;
+	}
+
+	.info {
+		margin: 4px 0 0 0;
+		gap: 8px;
+		&__item {
+			font-size: 14px;
+		}
+	}
+}

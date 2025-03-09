@@ -26,6 +26,7 @@
 	padding-bottom: 120px;
 	position: relative;
 	display: flex;
+	justify-content: space-between;
 }
 
 .info {
@@ -77,7 +78,7 @@
 }
 
 .numbers {
-	margin: 80px 0 0 80px;
+	margin: 80px 0 0;
 	display: flex;
 	flex-direction: column;
 	&_first {
@@ -125,4 +126,94 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+@media all and (max-width: 1440px) {
+	.container {
+		max-width: 1280px;
+		padding-bottom: 80px;
+	}
+	.title {
+		font-size: 56px;
+	}
+	.text {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 1280px) {
+	.container {
+		max-width: 1240px;
+		padding-bottom: 60px;
+	}
+	.title {
+		font-size: 48px;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.section {
+		margin: 0;
+		padding: 0;
+		&__count {
+			font-size: 244px;
+		}
+	}
+	.container  {
+		max-width: none;
+		padding: 0 8px 100px;
+		box-sizing: border-box;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow: hidden;
+	}
+	.tag {
+		font-size: 16px;
+	}
+	.info {
+		width: 100%;
+	}
+	.title {
+		font-size: 44px;
+		line-height: 1;
+	}
+	.text {
+		margin: 8px 0 0 0;
+		max-width: none;
+		font-size: 16px;
+	}
+	.link {
+		margin: 12px 0 0 0;
+		font-size: 16px;
+		z-index: 5;
+	}
+	.numbers {
+		margin: 20px 0 0;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+		&_first {
+			margin: 0;
+		}
+		&_second {
+			margin: 0;
+		}
+		&_third {
+			margin: 0;
+		}
+	}
+	.bubble_first {
+		right: 40px;
+		top: 20px;
+	}
+	.bubble_second {
+		left: -40px;
+		top: auto;
+		bottom: 40px;
+	}
+	.bubble_third {
+		right: -200px;
+		bottom: -20px;
+	}
 }

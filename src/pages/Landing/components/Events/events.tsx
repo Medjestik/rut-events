@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import type { IEvent } from '../../../../store/events/types';
 
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from '../../../../store/store';
 import {
 	setSearchedEvents,
@@ -34,6 +35,20 @@ export const Events: FC = () => {
 		isOpenSuccessModal,
 		isOpenEventsListModal,
 	} = useSelector((state) => state.events);
+
+	const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+	useEffect(() => {
+		function resizeWindow(evt: any) {
+			setWindowWidth(evt.target.innerWidth);
+		}
+
+		window.addEventListener('resize', resizeWindow);
+
+		return () => {
+			window.removeEventListener('resize', resizeWindow);
+		};
+	}, []);
 
 	const handleSearchEvents = (items: IEvent[]) => {
 		dispatch(setSearchedEvents(items));
@@ -69,40 +84,79 @@ export const Events: FC = () => {
 					<span className={styles.tag}>Список мероприятий</span>
 					<h2 className={styles.title}>Что тебе посетить?</h2>
 				</div>
-				<div className={styles.control}>
-					<Search items={events} onSearch={handleSearchEvents} />
-					<Select
-						placeholder='Направление'
-						options={possibleDirections}
-						currentOption={currentDirection}
-						onChooseOption={handleSetDirection}
-					/>
-					<Select
-						placeholder='Дата'
-						options={possibleDates}
-						currentOption={currentDate}
-						onChooseOption={handleSetDate}
-						width='small'
-					/>
-					{selectedEvents.length > 0 ? (
-						<div
-							className={`${styles.events__count} ${styles.events__count_type_active}`}
-							onClick={handleOpenEventsListModal}>
-							Выбрано мероприятий: {selectedEvents.length}
-						</div>
-					) : (
-						<div
-							className={`${styles.events__count} ${styles.events__count_type_empty}`}>
-							Выбрано мероприятий: {selectedEvents.length}
-						</div>
-					)}
+				{windowWidth > 800 ? (
+					<div className={styles.control}>
+						<Search items={events} onSearch={handleSearchEvents} />
+						<Select
+							placeholder='Направление'
+							options={possibleDirections}
+							currentOption={currentDirection}
+							onChooseOption={handleSetDirection}
+						/>
+						<Select
+							placeholder='Дата'
+							options={possibleDates}
+							currentOption={currentDate}
+							onChooseOption={handleSetDate}
+							width='small'
+						/>
+						{selectedEvents.length > 0 ? (
+							<div
+								className={`${styles.events__count} ${styles.events__count_type_active}`}
+								onClick={handleOpenEventsListModal}>
+								Выбрано мероприятий: {selectedEvents.length}
+							</div>
+						) : (
+							<div
+								className={`${styles.events__count} ${styles.events__count_type_empty}`}>
+								Выбрано мероприятий: {selectedEvents.length}
+							</div>
+						)}
 
-					<Button
-						text='Записаться'
-						isBlock={selectedEvents.length < 1}
-						onClick={handleOpenRequestModal}
-					/>
-				</div>
+						<Button
+							text='Записаться'
+							isBlock={selectedEvents.length < 1}
+							onClick={handleOpenRequestModal}
+						/>
+					</div>
+				) : (
+					<div className={styles.control}>
+						<div className={styles.control__row}>
+							<Select
+								placeholder='Направление'
+								options={possibleDirections}
+								currentOption={currentDirection}
+								onChooseOption={handleSetDirection}
+							/>
+							<Select
+								placeholder='Дата'
+								options={possibleDates}
+								currentOption={currentDate}
+								onChooseOption={handleSetDate}
+								width='small'
+							/>
+						</div>
+						<div className={styles.control__row}>
+							{selectedEvents.length > 0 ? (
+								<div
+									className={`${styles.events__count} ${styles.events__count_type_active}`}
+									onClick={handleOpenEventsListModal}>
+									Выбрано мероприятий: {selectedEvents.length}
+								</div>
+							) : (
+								<div
+									className={`${styles.events__count} ${styles.events__count_type_empty}`}>
+									Выбрано мероприятий: {selectedEvents.length}
+								</div>
+							)}
+							<Button
+								text='Записаться'
+								isBlock={selectedEvents.length < 1}
+								onClick={handleOpenRequestModal}
+							/>
+						</div>
+					</div>
+				)}
 				<EventsTable />
 			</div>
 			{isOpenRequestModal && (

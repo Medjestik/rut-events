@@ -116,3 +116,65 @@
 .item:hover .item__overlay {
 	opacity: 1;
 }
+
+@media all and (max-width: 1440px) {
+	.container  {
+		max-width: 1280px;
+	}
+	.title {
+		font-size: 56px;
+	}
+	.text {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 1280px) {
+	.container  {
+		max-width: 1240px;
+	}
+	.title {
+		font-size: 48px;
+	}
+	.text {
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.section {
+		margin: 120px 0 0 0;
+		&__count {
+			font-size: 244px;
+		}
+	}
+	.container  {
+		max-width: none;
+		padding: 0 8px;
+		box-sizing: border-box;
+	}
+	.tag {
+		font-size: 16px;
+	}
+	.info {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.title {
+		font-size: 44px;
+		line-height: 1;
+	}
+	.text {
+		margin: 8px 0 0 0;
+		max-width: none;
+		font-size: 16px;
+	}
+	.list {
+		margin: 24px 0 0 0;
+		flex-direction: column;
+	}
+	.item__text {
+		margin: 0 0 16px 0;
+		font-size: 16px;
+	}
+}

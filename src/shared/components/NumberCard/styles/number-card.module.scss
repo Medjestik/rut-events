@@ -47,3 +47,32 @@
 		color: inherit;
 	}
 }
+
+@media all and (max-width: 800px) {
+	.card {
+		margin: 0;
+		gap: 8px;
+		&_background_default {
+			padding: 12px;
+			max-width: 345px;
+			border-radius: 16px;
+		}
+		&_background_transparent {
+			padding: 20px;
+			max-width: 240px;
+		}
+		&_background_color {
+			padding: 12px;
+			max-width: 345px;
+			border-radius: 16px;
+		}
+		&__count {
+			font-size: 28px;
+		}
+		&__caption {
+			margin: 0 auto;
+			max-width: 240px;
+			font-size: 14px;
+		}
+	}
+}

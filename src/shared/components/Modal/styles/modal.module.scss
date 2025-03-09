@@ -128,3 +128,15 @@
 		overflow-x: hidden;
 	}
 }
+
+@media all and (max-width: 800px) {
+	.title {
+		font-size: 20px;
+		margin: 0 0 8px 0;
+	}
+
+	.description {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+}

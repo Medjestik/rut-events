@@ -3,6 +3,8 @@
 import type { FC } from 'react';
 import type { IEvent } from '../../../../store/events/types';
 
+import { useState, useEffect } from 'react';
+
 import { useDispatch, useSelector } from '../../../../store/store';
 import { setSelectedEvents } from '../../../../store/events/reducer';
 
@@ -18,6 +20,20 @@ export const EventsTable: FC = () => {
 	const handleChangeStatus = (item: IEvent) => {
 		dispatch(setSelectedEvents(item));
 	};
+
+	const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+	useEffect(() => {
+		function resizeWindow(evt: any) {
+			setWindowWidth(evt.target.innerWidth);
+		}
+
+		window.addEventListener('resize', resizeWindow);
+
+		return () => {
+			window.removeEventListener('resize', resizeWindow);
+		};
+	}, []);
 
 	return (
 		<div className={styles.table}>
@@ -35,13 +51,16 @@ export const EventsTable: FC = () => {
 							Наименование
 						</p>
 					</div>
-					<div
-						className={`${styles.table__column} ${styles.table__column_type_type}`}>
-						<p
-							className={`${styles.table__text} ${styles.table__text_weight_bold}`}>
-							Вид
-						</p>
-					</div>
+					{windowWidth > 800 && (
+						<div
+							className={`${styles.table__column} ${styles.table__column_type_type}`}>
+							<p
+								className={`${styles.table__text} ${styles.table__text_weight_bold}`}>
+								Вид
+							</p>
+						</div>
+					)}
+
 					<div
 						className={`${styles.table__column} ${styles.table__column_type_date}`}>
 						<p
@@ -56,13 +75,16 @@ export const EventsTable: FC = () => {
 							Время
 						</p>
 					</div>
-					<div
-						className={`${styles.table__column} ${styles.table__column_type_direction}`}>
-						<p
-							className={`${styles.table__text} ${styles.table__text_weight_bold}`}>
-							Направление
-						</p>
-					</div>
+
+					{windowWidth > 800 && (
+						<div
+							className={`${styles.table__column} ${styles.table__column_type_direction}`}>
+							<p
+								className={`${styles.table__text} ${styles.table__text_weight_bold}`}>
+								Направление
+							</p>
+						</div>
+					)}
 				</div>
 				{filteredEvents.length < 1 ? (
 					<p className={styles.table__empty}>
@@ -88,20 +110,22 @@ export const EventsTable: FC = () => {
 									className={`${styles.table__column} ${styles.table__column_type_name}`}>
 									<p className={`${styles.table__text}`}>{item.discipline}</p>
 								</div>
-								<div
-									className={`${styles.table__column} ${styles.table__column_type_type}`}>
-									{item.type === 'Лекция' ? (
-										<p
-											className={`${styles.table__tag} ${styles.table__tag_color_blue}`}>
-											Лекция
-										</p>
-									) : (
-										<p
-											className={`${styles.table__tag} ${styles.table__tag_color_green}`}>
-											Практика
-										</p>
-									)}
-								</div>
+								{windowWidth > 800 && (
+									<div
+										className={`${styles.table__column} ${styles.table__column_type_type}`}>
+										{item.type === 'Лекция' ? (
+											<p
+												className={`${styles.table__tag} ${styles.table__tag_color_blue}`}>
+												Лекция
+											</p>
+										) : (
+											<p
+												className={`${styles.table__tag} ${styles.table__tag_color_green}`}>
+												Практика
+											</p>
+										)}
+									</div>
+								)}
 								<div
 									className={`${styles.table__column} ${styles.table__column_type_date}`}>
 									<p className={`${styles.table__text}`}>
@@ -114,10 +138,12 @@ export const EventsTable: FC = () => {
 										{convertTime(item.start_time, item.end_time)}
 									</p>
 								</div>
-								<div
-									className={`${styles.table__column} ${styles.table__column_type_direction}`}>
-									<p className={`${styles.table__text}`}>{item.direction}</p>
-								</div>
+								{windowWidth > 800 && (
+									<div
+										className={`${styles.table__column} ${styles.table__column_type_direction}`}>
+										<p className={`${styles.table__text}`}>{item.direction}</p>
+									</div>
+								)}
 							</li>
 						))}
 					</ul>

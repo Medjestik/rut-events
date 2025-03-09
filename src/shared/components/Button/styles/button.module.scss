@@ -84,3 +84,13 @@
 		}
 	}
 }
+
+@media all and (max-width: 800px) {
+	.button {
+		font-size: 14px;
+		flex-shrink: 1;
+		&_style_landing {
+			font-size: 16px;
+		}
+	}
+}

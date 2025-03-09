@@ -14,10 +14,6 @@
 	&:hover {
 		cursor: pointer;
 	}
-	&_status_open {
-		&:hover {
-		}
-	}
 	&_width_default {
 		width: 300px;
 	}
@@ -129,3 +125,29 @@
   color: var(--main-grey-color);
 }
 
+@media all and (max-width: 800px) {
+	.select {
+		padding: 0 8px;
+		&_width_default {
+			width: 244px;
+		}
+		&_width_small {
+			width: 80px;
+		}
+	}
+	.item {
+		margin: 0 8px;
+		padding: 8px 0;
+	}
+	.title {
+		margin: 0 8px 0 0;
+		font-size: 14px;
+	}
+	.text {
+		font-size: 14px;
+	}
+	.placeholder {
+		margin: 0 8px 0 0;
+		font-size: 14px;
+	}
+}
